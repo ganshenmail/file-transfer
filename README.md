@@ -29,7 +29,7 @@
    ```bash
    node server.js
    ```
-5. 访问 `http://localhost:3000`
+5. 访问 `http://你的IP:3000`
 
 ## 项目结构
 
