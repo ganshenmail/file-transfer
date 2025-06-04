@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件传输系统</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- 删除确认对话框 -->
+    <div class="delete-modal" id="deleteModal">
+        <div class="delete-modal-content">
+            <div class="delete-modal-header">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <h3>确认删除</h3>
+            </div>
+            <div class="delete-modal-body">
+                <p class="delete-warning-text">您确定要删除以下文件吗？此操作无法撤销。</p>
+                <div class="delete-modal-filename" id="deleteFileName"></div>
+                <div class="delete-reason-input">
+                    <label for="deleteReason">删除原因（可选）:</label>
+                    <textarea id="deleteReason" placeholder="请输入删除原因..."></textarea>
+                </div>
+            </div>
+            <div class="delete-modal-actions">
+                <button class="delete-modal-cancel" id="cancelDelete">
+                    <i class="fas fa-times"></i> 取消
+                </button>
+                <button class="delete-modal-confirm" id="confirmDelete">
+                    <span class="delete-spinner"></span>
+                    <i class="fas fa-trash-alt"></i> 确认删除
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="upload-container">
+            <div class="upload-header">
+                <h2><i class="fas fa-cloud-upload-alt"></i> 文件上传</h2>
+            </div>
+            <div class="upload-area" id="dropZone">
+                <input type="file" id="fileInput" multiple style="display: none;">
+                <div class="upload-content">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>拖放文件到这里或点击选择文件</p>
+                </div>
+            </div>
+            <div id="uploadProgress" class="upload-progress"></div>
+        </div>
+
+        <div class="file-list-container">
+            <div class="file-list-header">
+                <h2><i class="fas fa-file-alt"></i> 文件列表</h2>
+            </div>
+            <div class="file-list" id="fileList">
+                <!-- 文件列表将通过JavaScript动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
